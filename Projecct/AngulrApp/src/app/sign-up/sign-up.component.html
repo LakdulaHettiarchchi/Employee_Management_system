@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <!--Made with love by Mutiullah Samim -->
+
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--Custom styles-->
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card" style="height: 420px;">
+                <div class="card-header">
+                    <h3 style="text-align: center;">Sign In</h3>
+
+                </div>
+                <div class="card-body">
+                    <form #signUpForm="ngForm">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" #full_name="ngModel" class="form-control"
+                                [(ngModel)]="userService.selectedUser.full_name" name="full_name"
+                                placeholder="Enter Full name">
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input type="text" #email="ngModel" class="form-control"
+                                [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Enter Email">
+                        </div>
+
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" #password="ngModel" class="form-control"
+                                [(ngModel)]="userService.selectedUser.password" name="password"
+                                placeholder="Enter Password">
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <button class="btn btn-custom left" type="button"
+                                (click)="onSubmit(signUpForm)">Submit</button>
+
+
+                        </div>
+
+                        <!-- <div class="form-group" style="padding-left: 40px;">
+
+                            <button class="btn btn-custom right" type="button"
+                                (click)="Reset(signUpForm)">Reset</button> -->
+
+
+                        <!-- </div> -->
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
